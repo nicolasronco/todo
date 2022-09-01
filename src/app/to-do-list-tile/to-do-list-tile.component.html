@@ -1,0 +1,14 @@
+<mat-card class="toDoTile">
+  <mat-card-title-group>
+    <mat-card-title>{{ toDo.title }}</mat-card-title>
+    <mat-card-subtitle>{{ toDo.createdDate | date: 'longDate' }}</mat-card-subtitle>
+    <mat-slide-toggle
+      [checked]="toDo.isDone"
+      color="primary"
+      (change)="onToggle($event)"
+    ></mat-slide-toggle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p> {{ toDo.description }} </p>
+  </mat-card-content>
+</mat-card>
