@@ -1,0 +1,17 @@
+img {
+  border: 2px solid #673ab7;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+button {
+  &:hover {
+    background-color: #4e2c8a;
+  }
+}
+
+.todo-button {
+  width: 100%;
+  text-align: center;
+}

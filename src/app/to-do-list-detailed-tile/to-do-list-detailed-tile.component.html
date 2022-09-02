@@ -9,6 +9,10 @@
     ></mat-slide-toggle>
   </mat-card-title-group>
   <mat-card-content>
-    <button mat-raised-button color="primary" (click)="onSeeDetails()">See details</button>
+    <p> {{ toDo.description }} </p>
   </mat-card-content>
 </mat-card>
+
+<div class="backButton">
+  <button mat-raised-button color="primary" (click)="goToList()">Back</button>
+</div>

@@ -14,8 +14,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToDoHeaderComponent } from './to-do-header/to-do-header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { IsDonePipe } from './is-done.pipe';
+import { ToDoListDetailedTileComponent } from './to-do-list-detailed-tile/to-do-list-detailed-tile.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ToDoContentComponent } from './to-do-content/to-do-content.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -23,14 +29,20 @@ import { environment } from 'src/environments/environment';
     AppComponent,
     ToDoListComponent,
     ToDoListTileComponent,
-    ToDoHeaderComponent
+    ToDoHeaderComponent,
+    IsDonePipe,
+    ToDoListDetailedTileComponent,
+    ToDoContentComponent,
+    HomePageComponent
   ],
   imports: [
+    AppRoutingModule,
     MatIconModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatButtonModule,
     HttpClientModule,
     BrowserModule,
     StoreModule.forRoot({ }),

@@ -1,4 +1,14 @@
-<app-to-do-list-tile class="toDoListTile"
+<app-to-do-list-tile
   *ngFor="let toDoElt of toDos"
   [toDo]="toDoElt"
 ></app-to-do-list-tile>
+
+<div class="buttons">
+  <button mat-raised-button color="primary" (click)="goToHomePage()">Create new item</button>
+  <button mat-raised-button color="basic" (click)="goToHomePage()">Back</button>
+</div>
+
+<!-- <app-to-do-list-tile
+  *ngFor="let toDoElt of toDos | isDone"
+  [toDo]="toDoElt"
+></app-to-do-list-tile> -->

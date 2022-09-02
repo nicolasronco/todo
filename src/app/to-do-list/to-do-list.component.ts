@@ -1,5 +1,7 @@
+import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ToDo } from '../models/to-do.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-to-do-list',
@@ -9,9 +11,15 @@ import { ToDo } from '../models/to-do.model';
 export class ToDoListComponent implements OnInit {
 
   @Input() toDos!: ToDo[];
+  /* object: {[key: number]: string} = {2: 'foo', 1: 'bar'};
+  map = new Map([[2, 'foo'], [1, 'bar']]); */
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void { }
+
+  goToHomePage() {
+    this.router.navigateByUrl('');
+  }
 
 }

@@ -1,0 +1,9 @@
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+
+  button + button {
+    margin-left: 20px;
+  }
+}

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
 import { ToDo } from '../models/to-do.model';
@@ -13,12 +14,16 @@ export class ToDoListTileComponent implements OnInit {
 
   @Input() toDo!: ToDo;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private router: Router) { }
 
   ngOnInit(): void { }
 
   onToggle(event: MatSlideToggleChange) {
     this.store.dispatch(setToDone({ toDoId: this.toDo.id, isDone: event.checked  }))
+  }
+
+  onSeeDetails() {
+    this.router.navigateByUrl(`todos/${this.toDo.id}`);
   }
 
 }
