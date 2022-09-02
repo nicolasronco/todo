@@ -1,2 +1,2 @@
-<mat-spinner *ngIf="toDos.length === 0"></mat-spinner>
+<mat-spinner *ngIf="!hasBeenFetched"></mat-spinner>
 <app-to-do-list [toDos]="toDos"></app-to-do-list>

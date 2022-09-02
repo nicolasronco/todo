@@ -4,6 +4,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store } from '@ngrx/store';
 import { ToDo } from '../models/to-do.model';
 import { setToDone } from '../state/to-do.actions';
+import { getToDos } from '../state/to-do.selectors';
 
 @Component({
   selector: 'app-to-do-list-tile',

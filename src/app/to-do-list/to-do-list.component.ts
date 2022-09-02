@@ -1,4 +1,3 @@
-import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ToDo } from '../models/to-do.model';
 import { Router } from '@angular/router';
@@ -11,8 +10,6 @@ import { Router } from '@angular/router';
 export class ToDoListComponent implements OnInit {
 
   @Input() toDos!: ToDo[];
-  /* object: {[key: number]: string} = {2: 'foo', 1: 'bar'};
-  map = new Map([[2, 'foo'], [1, 'bar']]); */
 
   constructor(private router: Router) { }
 
