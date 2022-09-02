@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { injectMocks } from 'data-mocks';
 import { Scenarios } from 'data-mocks/dist/types';
 import { ToDo } from '../models/to-do.model';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,36 @@ export class ToDoService {
     } else {
       throw new Error('ToDo not found !')
     }
+  }
+
+  async postToDo(title: string, description: string): Promise<ToDo> {
+    const newToDoItem: ToDo = {
+      id: this.toDos.length + 1,
+      title,
+      description,
+      createdDate: new Date(),
+      isDone: false,
+      isCrossedOut: false
+    };
+
+    const scenarios: Scenarios = {
+      default: [
+        {
+          url: /my-todos/,
+          method: 'POST',
+          response: newToDoItem,
+          responseCode: 201,
+          delay: 1000
+        }
+      ]
+    };
+
+    injectMocks(scenarios);
+
+    const res = await axios.post('https://foo.d/my-todos', { method: 'POST' });
+    const toDo = res.data;
+
+    return toDo;
   }
 
   async fetchToDos(): Promise<ToDo[]> {
@@ -47,7 +78,7 @@ export class ToDoService {
       id: 1,
       title: 'Buy groceries',
       description: 'Because fridge is nearly empty !',
-      createdDate: new Date(),
+      createdDate: new Date('September 1, 2022'),
       isDone: false,
       isCrossedOut: false
     },

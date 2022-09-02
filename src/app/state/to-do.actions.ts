@@ -10,3 +10,8 @@ export const setToDone = createAction(
   '[ToDo List] Update isDone attribute on ToDo',
   props<{ toDoId: number, isDone: boolean }>()
 );
+
+export const addToDoItem = createAction(
+  '[ToDo List/API] Add ToDo Item Success',
+  props<{ toDo: ToDo }>()
+);

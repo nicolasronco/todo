@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { ToDo } from "../models/to-do.model";
-import { fetchedToDos, setToDone } from "./to-do.actions";
+import { fetchedToDos, setToDone, addToDoItem } from "./to-do.actions";
 
 export interface State {
   hasBeenFetched: boolean,
@@ -29,5 +29,6 @@ export const toDoReducer = createReducer(
     }
 
     return newState;
-  })
+  }),
+  on(addToDoItem, (state, { toDo }) => ({...state, toDos: [...state.toDos, toDo]}))
 );
