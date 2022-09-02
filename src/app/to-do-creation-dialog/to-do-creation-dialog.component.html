@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Add new to do item</h1>
+
+<div mat-dialog-content class="matDialogContent">
+  <form>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput required placeholder="Ex. Call Dad for his birthday" [formControl]="titleFormControl">
+      <mat-error *ngIf="titleFormControl.hasError('required')">Title is <strong>required</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions class="matDialogActions">
+  <button mat-raised-button mat-dialog-close color="primary" [disabled]="titleFormControl.hasError('required')">Add</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>
