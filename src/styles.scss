@@ -4,9 +4,6 @@
 * {
   box-sizing: border-box;
 }
-/* html, body {
-  height: 100%;
-} */
 
 body {
   margin: 0;
@@ -24,6 +21,10 @@ mat-card {
   margin-top: 20px;
   max-width: 500px;
   border: 1px solid lightgrey;
+
+  mat-card-title.crossedOut {
+    text-decoration: line-through;
+  }
 }
 
 mat-card:last-child {

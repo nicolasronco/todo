@@ -5,6 +5,7 @@ export class ToDo {
   description!: string;
   isDone!: boolean;
   createdDate!: Date;
+  modifiedDate!: Date;
   isCrossedOut!: boolean;
 
 }

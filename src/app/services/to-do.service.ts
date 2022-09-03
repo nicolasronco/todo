@@ -29,6 +29,7 @@ export class ToDoService {
       title,
       description,
       createdDate: new Date(),
+      modifiedDate: new Date(),
       isDone: false,
       isCrossedOut: false
     };
@@ -79,30 +80,34 @@ export class ToDoService {
       title: 'Buy groceries',
       description: 'Because fridge is nearly empty !',
       createdDate: new Date('September 1, 2022'),
-      isDone: false,
-      isCrossedOut: false
-    },
-    {
-      id: 2,
-      title: 'Take vitamins',
-      description: 'To stay healthy.',
-      createdDate: new Date('August 11, 2022'),
+      modifiedDate: new Date('September 1, 2022'),
       isDone: true,
       isCrossedOut: false
     },
     {
-      id: 3,
+      id: 2,
       title: 'Learn Angular',
       description: 'Because it\'s the future !',
-      createdDate: new Date('July 22, 2022'),
+      createdDate: new Date('August 11, 2022'),
+      modifiedDate: new Date('August 11, 2022'),
       isDone: false,
       isCrossedOut: false
+    },
+    {
+      id: 3,
+      title: 'Take vitamins',
+      description: 'To stay healthy.',
+      createdDate: new Date('July 22, 2022'),
+      modifiedDate: new Date('July 22, 2022'),
+      isDone: false,
+      isCrossedOut: true
     },
     {
       id: 4,
       title: 'Lunch with Sam',
       description: 'It\'s been a long time !',
       createdDate: new Date('July 29, 2022'),
+      modifiedDate: new Date('July 29, 2022'),
       isDone: true,
       isCrossedOut: false
     }

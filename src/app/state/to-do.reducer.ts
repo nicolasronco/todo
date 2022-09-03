@@ -23,6 +23,8 @@ export const toDoReducer = createReducer(
       let newToDo = {...toDo};
       let newToDos = state.toDos.filter(toDo => toDo.id !== toDoId);
       newToDo.isDone = isDone;
+      newToDo.isCrossedOut = !isDone;
+      newToDo.modifiedDate = new Date();
       newToDos.push(newToDo)
       newToDos.sort((a, b) => a.id - b.id);
       newState.toDos = newToDos;
