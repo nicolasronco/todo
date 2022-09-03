@@ -2,7 +2,7 @@
 <div *ngIf="hasBeenFetched">
   <mat-card>
     <mat-card-title-group>
-      <mat-card-title>{{ toDo.title }}</mat-card-title>
+      <mat-card-title [ngClass]="{ crossedOut: toDo.isCrossedOut }">{{ toDo.title }}</mat-card-title>
       <mat-card-subtitle>Created on {{ toDo.createdDate | date: 'longDate' }}</mat-card-subtitle>
       <mat-slide-toggle
         [checked]="isToDoDone"
@@ -16,6 +16,6 @@
   </mat-card>
   
   <div class="backButton">
-    <button mat-raised-button color="primary" (click)="goToList()">Back</button>
+    <button mat-raised-button color="basic" (click)="goToList()">Back</button>
   </div>
 </div>

@@ -1,9 +1,10 @@
 .buttons {
-  margin-top: 20px;
+  margin-top: 20px 0px;
   text-align: center;
   width: 100%;
 
-  button + button {
+  .backButton {
+    color: #673ab7;
     margin-left: 20px;
   }
 }

@@ -41,7 +41,7 @@ export class ToDoService {
           method: 'POST',
           response: newToDoItem,
           responseCode: 201,
-          delay: 1000
+          delay: 1500
         }
       ]
     };
@@ -62,7 +62,7 @@ export class ToDoService {
           method: 'GET',
           response: this.getAllToDos(),
           responseCode: 200,
-          delay: 500
+          delay: 1000
         }
       ]
     };
@@ -81,7 +81,7 @@ export class ToDoService {
       description: 'Because fridge is nearly empty !',
       createdDate: new Date('September 1, 2022'),
       modifiedDate: new Date('September 1, 2022'),
-      isDone: true,
+      isDone: false,
       isCrossedOut: false
     },
     {
@@ -99,8 +99,8 @@ export class ToDoService {
       description: 'To stay healthy.',
       createdDate: new Date('July 22, 2022'),
       modifiedDate: new Date('July 22, 2022'),
-      isDone: false,
-      isCrossedOut: true
+      isDone: true,
+      isCrossedOut: false
     },
     {
       id: 4,
@@ -108,8 +108,8 @@ export class ToDoService {
       description: 'It\'s been a long time !',
       createdDate: new Date('July 29, 2022'),
       modifiedDate: new Date('July 29, 2022'),
-      isDone: true,
-      isCrossedOut: false
+      isDone: false,
+      isCrossedOut: true
     }
   ];
 

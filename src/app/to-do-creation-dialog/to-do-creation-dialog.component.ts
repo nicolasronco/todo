@@ -11,6 +11,7 @@ import { addToDoItem } from '../state/to-do.actions';
   styleUrls: ['./to-do-creation-dialog.component.scss']
 })
 export class ToDoCreationDialogComponent implements OnInit {
+  isPosting: boolean = false;
   titleFormControl = new FormControl('', [Validators.required]);
   descriptionFormControl = new FormControl('', []);
 
@@ -26,8 +27,13 @@ export class ToDoCreationDialogComponent implements OnInit {
     const description = this.descriptionFormControl.value;
 
     if (title) {
+      this.isPosting = true;
       this.toDoService.postToDo(title, description || '')
-        .then((toDo) => this.store.dispatch(addToDoItem({ toDo })));
+        .then((toDo) => {
+          this.store.dispatch(addToDoItem({ toDo }));
+          this.isPosting = false;
+          this.dialogRef.close();
+        });
     }
   }
 }
