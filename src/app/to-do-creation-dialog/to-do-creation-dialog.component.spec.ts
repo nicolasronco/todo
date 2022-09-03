@@ -30,4 +30,10 @@ describe('ToDoCreationDialogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('check init values', () => {
+    expect(component.isPosting).toBe(false);
+    expect(component.titleFormControl).toBeDefined();
+    expect(component.descriptionFormControl).toBeDefined();
+  });
 });

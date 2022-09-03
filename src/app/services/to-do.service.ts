@@ -50,6 +50,7 @@ export class ToDoService {
 
     const res = await axios.post('https://foo.d/my-todos', { method: 'POST' });
     const toDo = res.data;
+    this.toDos.push(toDo);
 
     return toDo;
   }
