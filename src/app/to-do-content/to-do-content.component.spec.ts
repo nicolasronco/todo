@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideMockStore } from '@ngrx/store/testing';
 import { ToDoContentComponent } from './to-do-content.component';
 
 describe('ToDoContentComponent', () => {
@@ -8,7 +8,8 @@ describe('ToDoContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToDoContentComponent ]
+      declarations: [ ToDoContentComponent ],
+      providers: [ provideMockStore() ]
     })
     .compileComponents();
 

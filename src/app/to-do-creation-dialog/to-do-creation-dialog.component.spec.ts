@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule, MatDialogRef  } from '@angular/material/dialog';
 import { ToDoCreationDialogComponent } from './to-do-creation-dialog.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 describe('ToDoCreationDialogComponent', () => {
   let component: ToDoCreationDialogComponent;
@@ -8,7 +10,15 @@ describe('ToDoCreationDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToDoCreationDialogComponent ]
+      imports: [ MatDialogModule , RouterTestingModule ],
+      declarations: [ ToDoCreationDialogComponent ],
+      providers: [
+        provideMockStore(),
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
+      ]
     })
     .compileComponents();
 
